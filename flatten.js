@@ -1,5 +1,5 @@
 /*
-  Returns an array with all elements of the given array and their contents to any depth placed into a single one-dimensional array.
+  Returns an array with all elements of the given 2D array and their contents placed into a single one-dimensional array.
 */
 const flatten = function(ar) {
   
@@ -10,7 +10,7 @@ const flatten = function(ar) {
   let newArray = [];
   
   for (let x = 0; x < ar.length; x++) {
-    //newArray.push(flatten(ar[i]));
+    //newArray.push(flatten(ar[x]));
     if (Array.isArray(ar[x])) { //Check whether this element is an array before continuing
       for (let y = 0; y < ar[x].length; y++) {
         newArray.push(ar[x][y]);
