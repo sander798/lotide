@@ -1,19 +1,4 @@
-/*
-  Returns whether two given arrays are strictly equal.
-*/
-const eqArrays = function(ar1, ar2) {
-  if (ar1.length !== ar2.length){
-    return false;
-  }
-  
-  for (let i = 0; i < ar1.length; i++){
-    if (ar1[i] !== ar2[i]) {
-      return false;
-    }
-  }
-  
-  return true;
-};
+const eqArrays = require("./eqArrays");
 
 const assertArraysEqual = function(ar1, ar2) {
   if (eqArrays(ar1, ar2) === true) {
@@ -23,6 +8,4 @@ const assertArraysEqual = function(ar1, ar2) {
   }
 };
 
-assertArraysEqual([], []);
-assertArraysEqual([1, 2], [1, 2]);
-assertArraysEqual([], [2, 5]);
+module.exports = assertArraysEqual;
