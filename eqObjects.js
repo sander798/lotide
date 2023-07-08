@@ -1,36 +1,4 @@
-/*
-  Returns whether two given arrays are strictly equal.
-*/
-const eqArrays = function(ar1, ar2) {
-  if (ar1.length !== ar2.length){
-    return false;
-  }
-  
-  for (let i = 0; i < ar1.length; i++){
-    if (ar1[i] !== ar2[i]) {
-      return false;
-    }
-  }
-  
-  return true;
-};
-
-const assertArraysEqual = function(ar1, ar2) {
-  if (eqArrays(ar1, ar2) === true) {
-    console.log(`:D Assertion Passed: ${ar1} === ${ar2}`);
-  } else {
-    console.log(`:( Assertion Failed: ${ar1} !== ${ar2}`);
-  }
-};
-
-const assertEqual = function(actual, expected) {
-  
-  if (actual === expected) {
-    console.log(`:D Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`:( Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const eqArrays = require("./eqArrays");
 
 const eqObjects = function(obj1, obj2) {
 
@@ -59,7 +27,9 @@ const eqObjects = function(obj1, obj2) {
   return true;
 };
 
-const carObject1 = {colour: "blue", type: "convertible", maker: "Toyota"};
+module.exports = eqObjects;
+
+/*const carObject1 = {colour: "blue", type: "convertible", maker: "Toyota"};
 const carObject2 = {colour: "red", type: "truck", maker: "Ford"};
 
 assertEqual(eqObjects({a:1, b:4, c:2}, {a:1, b:4, c:2}), true);
@@ -71,3 +41,4 @@ assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true
 
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
+*/

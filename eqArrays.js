@@ -1,5 +1,3 @@
-const assertEqual = require("./assertEqual");
-
 /*
   Returns whether two given arrays are strictly equal.
 */

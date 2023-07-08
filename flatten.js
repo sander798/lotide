@@ -3,17 +3,24 @@
 */
 const flatten = function(ar) {
   
-  /*if (!Array.isArray(ar)){
+  if (typeof ar !== "object") {
     return ar;
-  }*/
+  }
   
   let newArray = [];
   
   for (let x = 0; x < ar.length; x++) {
-    //newArray.push(flatten(ar[x]));
+    
     if (Array.isArray(ar[x])) { //Check whether this element is an array before continuing
-      for (let y = 0; y < ar[x].length; y++) {
-        newArray.push(ar[x][y]);
+      
+      let innerValue = flatten(ar[x]);//Recursively flatten the element
+      
+      if (Array.isArray(innerValue)) {
+        for (let y = 0; y < innerValue.length; y++) {
+          newArray.push(innerValue[y]);
+        }
+      } else {
+        newArray.push(innerValue);
       }
     } else {
       newArray.push(ar[x]);
@@ -23,4 +30,4 @@ const flatten = function(ar) {
   return newArray;
 };
 
-console.log(flatten([[1,2,3],[4,5,6],[7,8,9,10], 11, 12]));
+module.exports = flatten;
