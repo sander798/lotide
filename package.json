@@ -2,7 +2,7 @@
   "name": "@sanderevans/lotide",
   "version": "1.0.0",
   "description": "An incomplete lotide library clone made for educational purposes.",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "tests"
   },
